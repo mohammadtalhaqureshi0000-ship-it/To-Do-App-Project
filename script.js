@@ -3,13 +3,11 @@ const show = document.getElementById("showtext");
 const inputField = document.getElementById("taskInput");
 
 let notes;
-
 try {
     notes = JSON.parse(localStorage.getItem("notes")) || [];
 } catch (e) {
     notes = [];
 }
-
 function displayNotes() {
     show.innerHTML = "";
     notes.forEach((note, index) => {
@@ -22,13 +20,11 @@ function displayNotes() {
                 <button class="btn btn-sm btn-danger delete">Delete</button>
             </div>
         `;
-    
         li.querySelector(".delete").addEventListener("click", () => {
             notes.splice(index, 1);
             localStorage.setItem("notes", JSON.stringify(notes));
             displayNotes();
         });
-
         li.querySelector(".edit").addEventListener("click", () => {
             let updated = prompt("Edit your task:", note);
             if (updated) {
@@ -41,7 +37,6 @@ function displayNotes() {
         show.appendChild(li);
     });
 }
-
     button.addEventListener("click", () => {
         const note = inputField.value.trim();
         if (note) {
@@ -51,7 +46,6 @@ function displayNotes() {
             inputField.value = "";
         }
     });
-
 inputField.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
         button.click();
