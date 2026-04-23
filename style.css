@@ -1,0 +1,117 @@
+/* 🌈 Background */
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🧾 Card Design */
+.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 📝 Title */
+.card-title {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 🔘 Buttons */
+#btn,
+.btn-primary {
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    border: none;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+/* Hover */
+#btn:hover,
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* 🧾 Input */
+#taskInput,
+.form-control {
+    border-radius: 12px;
+    padding: 10px;
+}
+
+/* 📋 List */
+.list-group {
+    margin-top: 15px;
+}
+
+/* 📌 Task Item */
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 12px;
+    flex-wrap: wrap; /* 🔥 important for mobile */
+    gap: 10px;
+}
+
+/* Buttons inside list */
+.list-group-item button {
+    margin-left: 5px;
+    border-radius: 8px;
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 576px) {
+
+    .card {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    #btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .list-group-item div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
